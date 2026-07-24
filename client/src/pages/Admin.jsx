@@ -1,8 +1,9 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import API from "../api/api";
 
 function Admin() {
+  const navigate = useNavigate();
   const [leads, setLeads] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -30,7 +31,7 @@ function Admin() {
       <button
         onClick={() => {
           localStorage.removeItem("token");
-          window.location.href = "/login";
+          navigate("/login");
         }}
         className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
       >
