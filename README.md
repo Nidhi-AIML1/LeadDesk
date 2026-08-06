@@ -91,7 +91,7 @@ Use those credentials at `http://127.0.0.1:5173/login`.
 
 1. Create a MongoDB Atlas database and database user, or use another managed MongoDB provider.
 2. Deploy `server` to Render using `server/render.yaml`. Set `MONGO_URI` and `CLIENT_URL` in Render.
-3. Deploy `client` to Vercel. Set `VITE_API_URL` to `https://YOUR-RENDER-SERVICE.onrender.com/api`.
+3. Deploy `client` to Vercel. Its `vercel.json` proxies production `/api` requests to the Render service; update that Render hostname there if you deploy a differently named backend.
 4. Update Render `CLIENT_URL` with the Vercel site URL, redeploy the API, then test in a private/incognito browser window.
 
 ## Submission checklist
